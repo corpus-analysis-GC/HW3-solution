@@ -21,7 +21,7 @@ def main(args: argparse.Namespace) -> None:
         for line in source:
             post = json.loads(line)
             title = post["title"]
-            for expr in re.finditer(r"(\d+)(f|F|m|m|nb|NB)", title):
+            for expr in re.finditer(r"(\d+)(f|F|m|M|nb|NB)", title):
                 age = int(expr.group(1))
                 gender = expr.group(2).upper()
                 ages[age] += 1
